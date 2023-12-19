@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jop_finder_mobile_app/Pages/ApplyJop.dart';
-import 'package:jop_finder_mobile_app/Pages/LoginPage.dart';
 import 'package:jop_finder_mobile_app/Pages/Popular.dart';
-import 'package:jop_finder_mobile_app/Pages/hhh.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -95,12 +93,12 @@ class _HomePageState extends State<HomePage> {
               //       ),
               // ),
 
-              Text("Discofer",
+              const Text("Discofer",
                   style: TextStyle(fontSize: 35, color: Colors.white)),
-              Text("The Perfect Jop",
+              const Text("The Perfect Jop",
                   style: TextStyle(fontSize: 35, color: Colors.white)),
 
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
 
@@ -109,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                     hintText: 'Search',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(19),
-                        borderSide: BorderSide(color: Colors.black)),
+                        borderSide: const BorderSide(color: Colors.black)),
                     filled: true,
                     fillColor: Colors.white54),
               ),
@@ -140,112 +138,122 @@ class _HomePageState extends State<HomePage> {
 
               //   },
               // ),
-              SizedBox(
-                height: 60,
+              const SizedBox(
+                height: 47,
               ),
-              // SizedBox(
-              //   height: 180,
-              //   child: ListView.builder(
-              //     scrollDirection: Axis.horizontal,
-              //     itemCount: jopList.length,
-              //     itemExtent: 290,
-              //     itemBuilder: (BuildContext context, int index) {
-              //       return Padding(
-              //         padding: const EdgeInsets.only(right: 15),
-              //         child: GestureDetector(
-              //            onTap: () => Navigator.of(context).push(
-              //                   MaterialPageRoute(
-              //                       builder: (context) => ApplyScreen())),
-              //           child: Container(
-              //             decoration: BoxDecoration(
-              //                 color: Color.fromARGB(255, 227, 127, 19),
-              //                 borderRadius: BorderRadius.circular(20)),
-              //             child: Padding(
-              //               padding: const EdgeInsets.all(10),
-              //               child: Column(
-              //                 crossAxisAlignment: CrossAxisAlignment.start,
-              //                 children: [
-              //                   Row(
-              //                       mainAxisAlignment:
-              //                           MainAxisAlignment.spaceBetween,
-              //                       children: [
-              //                         ClipRRect(                                                                                                                             
-              //                             borderRadius: BorderRadius.circular(10),
-              //                           child: Container(                                        
-              //                               height: 50,                                                                                     
-              //                               width: 50,                                                                                     
-              //                                 color: Colors.grey[400],  
-              //                                 child: Padding(
-              //                                   padding: const EdgeInsets.all(10),
-              //                                   child: Image.asset(jopList[index].image),
-              //                                 ),                                                                                    
-              //                               ),                                            
-              //                         ),
-                                         
 
-
-              //                         Container(
-              //                           height: 40,
-              //                           width: 80,
-              //                           decoration: BoxDecoration(
-              //                             color: Colors.red,
-              //                             borderRadius:
-              //                                 BorderRadius.circular(20),
-              //                           ),
-              //                           child: ClipRRect(
-              //                               child: Center(
-              //                             child: Text(jopList[index].time),
-              //                             // child: Text("Full Time")
-              //                           )),
-              //                         )
-                      
-              //                         // Icon(Icons.favorite_outline),
-              //                       ]
-              //                       ),
-              //                   SizedBox(
-              //                     height: 20,
-              //                   ),
-              //                   Text(
-              //                     jopList[index].companyName,
-              //                     style: TextStyle(
-              //                         fontSize: 15,
-              //                         color: Colors.white54,
-              //                         fontWeight: FontWeight.w500),
-              //                   ),
-              //                   // Text('Google LLC',style: TextStyle(fontSize: 15,color: Colors.white54,fontWeight: FontWeight.w500),),
-              //                   SizedBox(
-              //                     height: 7,
-              //                   ),
-              //                   // Text('Design System Developer',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
-              //                   Text(
-              //                     jopList[index].jopType,
-              //                     style: TextStyle(
-              //                         fontSize: 20,
-              //                         color: Colors.black,
-              //                         fontWeight: FontWeight.bold),
-              //                   ),
-              //                   SizedBox(
-              //                     height: 7,
-              //                   ),
-              //                   //Text('California, United State',style: TextStyle(fontSize: 15,color: Colors.white54,fontWeight: FontWeight.w500),),
-              //                   Text(
-              //                     jopList[index].location,
-              //                     style: TextStyle(
-              //                         fontSize: 15,
-              //                         color: Colors.white54,
-              //                         fontWeight: FontWeight.w500),
-              //                   ),
-              //                 ],
-              //               ),
-              //             ),
-              //           ),
-              //         ),
-              //       );
-              //     },
-              //   ),
-              // ),
-
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text("Popular Jops",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400),), 
+                Text("Show All",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400),)],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               SizedBox(
+                height: 180,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: jopList.length,
+                  itemExtent: 290,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) => 
+                                ApplyScreen(image: jopList[index].image, jopTitle: jopList[index].jopType, 
+                                company: jopList[index].companyName, location: jopList[index].location,
+                                 description: jopList[index].description))),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 227, 127, 19),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Container(
+                                          height: 50,
+                                          width: 50,
+                                          color: Colors.grey[300],
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(10),
+                                            child: Image.asset(
+                                                jopList[index].image),
+                                          ),
+                                        ),
+                                      ),
+
+                                      Container(
+                                        height: 40,
+                                        width: 80,
+                                        decoration: BoxDecoration(
+                                          color: Colors.red,
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                        ),
+                                        child: ClipRRect(
+                                            child: Center(
+                                          child: Text(jopList[index].time),
+                                          // child: Text("Full Time")
+                                        )),
+                                      )
+
+                                      // Icon(Icons.favorite_outline),
+                                    ]),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  jopList[index].companyName,
+                                  style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.white54,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                // Text('Google LLC',style: TextStyle(fontSize: 15,color: Colors.white54,fontWeight: FontWeight.w500),),
+                                const SizedBox(
+                                  height: 7,
+                                ),
+                                // Text('Design System Developer',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
+                                Text(
+                                  jopList[index].jopType,
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(
+                                  height: 7,
+                                ),
+                                //Text('California, United State',style: TextStyle(fontSize: 15,color: Colors.white54,fontWeight: FontWeight.w500),),
+                                Text(
+                                  jopList[index].location,
+                                  style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.white54,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              const SizedBox(
                 height: 60,
               ),
 
@@ -274,23 +282,7 @@ class _HomePageState extends State<HomePage> {
               //     },
               //   ),
               // ),
-           
-           
-          Expanded(child: ListView.builder(
-            itemCount: 1,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: hhh(
-                  Text('FeyCode'),
-                ),
-              );
-            },
-          ),)
-           
-           
-            ]
-            ),
+            ]),
           ),
         ));
   }

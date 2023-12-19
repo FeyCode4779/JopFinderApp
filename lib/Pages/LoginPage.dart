@@ -13,164 +13,178 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[800],
-      body: Padding(      
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
-            Text('Hello welcome back!',
-            style: TextStyle(fontSize: 25,color: Colors.white),),
-            SizedBox(
+            const Text(
+              'Hello welcome back!',
+              style: TextStyle(fontSize: 25, color: Colors.white),
+            ),
+            const SizedBox(
               height: 10,
             ),
-            Text('Login to continue',
-            style: TextStyle(fontSize: 16,color: Color.fromARGB(255, 242, 240, 240)),),
-      SizedBox(
+            const Text(
+              'Login to continue',
+              style: TextStyle(
+                  fontSize: 16, color: Color.fromARGB(255, 242, 240, 240)),
+            ),
+            const SizedBox(
               height: 54,
             ),
             TextFormField(
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                hintText: 'Email',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(24),                
-                  borderSide: BorderSide(color: Colors.black54)
-                  ),
+                  hintText: 'Email',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(24),
+                      borderSide: const BorderSide(color: Colors.black54)),
                   filled: true,
-                  fillColor: Colors.white54
-              ),
+                  fillColor: Colors.white54),
             ),
-            SizedBox(
+            const SizedBox(
               height: 18,
             ),
             TextFormField(
+              keyboardType: TextInputType.visiblePassword,
               decoration: InputDecoration(
-                hintText: 'Password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(24),                
-                  borderSide: BorderSide(color: Colors.black54)
+
+                  ///isDense: true,
+                  hintText: 'Password',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(24),
+                    borderSide: const BorderSide(color: Colors.black54),
                   ),
                   filled: true,
-                  fillColor: Colors.white54
-              ),
+                  fillColor: Colors.white54),
             ),
-      
             Align(
               alignment: Alignment.centerRight,
-              child: TextButton(onPressed: (){
-                print("Cliked!");
-              }, 
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white
-              ),
-              child: Text('Forget Password',style: TextStyle(color: Colors.amber),)),
+              child: TextButton(
+                  onPressed: () {
+                    print("Cliked!");
+                  },
+                  style: TextButton.styleFrom(foregroundColor: Colors.white),
+                  child: const Text(
+                    'Forget Password',
+                    style: TextStyle(color: Colors.amber),
+                  )),
             ),
-               SizedBox(
+            const SizedBox(
               height: 55,
             ),
-      
-      
-      
             SizedBox(
               // height: 10,
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, 
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.amber,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24)
-                )            
-              ),
-              
-              child: Padding(
-                padding: const EdgeInsets.all(17),
-                child: Text('Login in'),
-              )),
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.amber,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24))),
+                  child: const Padding(
+                    padding: EdgeInsets.all(17),
+                    child: Text('Login in'),
+                  )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-      
-       Text("Or Sign in with",style: TextStyle(color: Color.fromARGB(255, 242, 240, 240)),),
- SizedBox(
+            const Text(
+              "Or Sign in with",
+              style: TextStyle(color: Color.fromARGB(255, 242, 240, 240)),
+            ),
+            const SizedBox(
               height: 10,
             ),
             SizedBox(
               // height: 10,
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, 
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24)
-                )            
-              ),
-              
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/google.png",height: 22,width: 22,),
-                  SizedBox(
-                    width: 6,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 17),
-                    child: Text('Login with Google'),
-                  ),
-                ],
-              )),
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/google.png",
+                        height: 22,
+                        width: 22,
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 17),
+                        child: Text('Login with Google'),
+                      ),
+                    ],
+                  )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
-      
             SizedBox(
               // height: 10,
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){}, 
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(24)
-                )            
-              ),
-              
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset('assets/facebook.jpeg',height: 22,width: 22,),
-                  SizedBox(
-                    width: 6,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 17),
-                    child: Text('Login with Facebook'),
-                  ),
-                ],
-              )),
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/facebook.jpeg',
+                        height: 22,
+                        width: 22,
+                      ),
+                      const SizedBox(
+                        width: 6,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 17),
+                        child: Text('Login with Facebook'),
+                      ),
+                    ],
+                  )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 1,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don't have account? ",style: TextStyle(color: Colors.white),), 
+                const Text(
+                  "Don't have account? ",
+                  style: TextStyle(color: Colors.white),
+                ),
                 // SizedBox(
                 //   height: 1,
-                // ),                          
-               TextButton(onPressed: (){
-               Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SignInPage()));
-               },
-                          
-               child:  Text("Sign up", style: TextStyle(color: Colors.amber),))
+                // ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const SignInPage()));
+                    },
+                    child: const Text(
+                      "Sign up",
+                      style: TextStyle(color: Colors.amber),
+                    ))
               ],
             )
-        ],
+          ],
         ),
       ),
     );

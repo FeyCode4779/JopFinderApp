@@ -18,185 +18,185 @@ class _SignInPageState extends State<SignInPage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0),
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 120,
-                ),
-        
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Register Account ',
-                      style: TextStyle(fontSize: 25,color: Colors.white),),
-                      SizedBox(
-                        height: 16,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 120,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Register Account ',
+                      style: TextStyle(fontSize: 25, color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    SizedBox(
+                      width: 250,
+                      child: Text(
+                        'Fill your details or continue with social media',
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Color.fromARGB(255, 242, 240, 240)),
                       ),
-                      SizedBox(
-                        width: 250,
-                        child: Text('Fill your details or continue with social media',
-                        style: TextStyle(fontSize: 16,color: Color.fromARGB(255, 242, 240, 240)),),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-        
-          SizedBox(
-                  height: 40,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
                     hintText: 'Full Name',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(24),                
-                      borderSide: BorderSide(color: Colors.black54)
-                      ),
-                      filled: true,
-                      fillColor: Colors.white54
-                  ),
-                ),
-                SizedBox(
-                  height: 18,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
+                        borderRadius: BorderRadius.circular(24),
+                        borderSide: const BorderSide(color: Colors.black54)),
+                    filled: true,
+                    fillColor: Colors.white54),
+              ),
+              const SizedBox(
+                height: 18,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
                     hintText: 'Email Address',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(24),                
-                      borderSide: BorderSide(color: Colors.black54)
-                      ),
-                      filled: true,
-                      fillColor: Colors.white54
-                  ),
-                ),
-                SizedBox(
-                  height: 18,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
+                        borderRadius: BorderRadius.circular(24),
+                        borderSide: const BorderSide(color: Colors.black54)),
+                    filled: true,
+                    fillColor: Colors.white54),
+              ),
+              const SizedBox(
+                height: 18,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(
                     hintText: 'Password',
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(24),                
-                      borderSide: BorderSide(color: Colors.black54)
-                      ),
-                      filled: true,
-                      fillColor: Colors.white54
-                  ),
+                        borderRadius: BorderRadius.circular(24),
+                        borderSide: const BorderSide(color: Colors.black54)),
+                    filled: true,
+                    fillColor: Colors.white54),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Center(
+                child: SizedBox(
+                  // height: 10,
+
+                  width: 143,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.amber,
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24))),
+                      child: const Padding(
+                          padding: EdgeInsets.all(17),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Sign In",
+                                style: TextStyle(fontSize: 24),
+                              ),
+                              SizedBox(
+                                width: 3,
+                              ),
+                              // Image.asset("assets/an arrow (2).png",height: 22,width: 22,)
+                            ],
+                          )
+                          //Text('Sign In'),
+                          )),
                 ),
-          
-              
-                   SizedBox(
-                  height: 50,
-                ),
-          
-          
-          
-                Center(
-                  child: SizedBox(
-                    // height: 10,
-                      
-                    width: 143,
-                    child: ElevatedButton(onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>
-                      HomePage()),
-                      );
-                    }, 
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              const Center(
+                  child: Text(
+                "Or continue with",
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              )),
+              const SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                // height: 10,
+                width: 350,
+                child: ElevatedButton(
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.amber,
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24)
-                      )            
-                    ),
-                    
-                    child: Padding(
-                      padding: const EdgeInsets.all(17),
-                      child: 
-                      Row(
-                        children: [
-                          Text("Sign In",style: TextStyle(fontSize: 24),),
-                          SizedBox(width: 3,
-                          ),
-                          // Image.asset("assets/an arrow (2).png",height: 22,width: 22,)
-                        ],
-                      )
-                      //Text('Sign In'),
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/google.png",
+                          height: 22,
+                          width: 22,
+                        ),
+                        const SizedBox(
+                          width: 6,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 17),
+                          child: Text('Continue with Google'),
+                        ),
+                      ],
                     )),
-                  ),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-          
-          Center(child: Text("Or continue with", style: TextStyle(fontSize: 16,color: Colors.white),)),   
-                
-                SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  // height: 10,
-                  width: 350,
-                  child: ElevatedButton(onPressed: (){}, 
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24)
-                    )            
-                  ),
-                  
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset("assets/google.png",height: 22,width: 22,),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 17),
-                        child: Text('Continue with Google'),
-                      ),                    
-                    ],
-                  )),
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-          
-                SizedBox(
-                  // height: 10,
-                  width: 350,
-                  child: ElevatedButton(onPressed: (){}, 
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24)
-                    )            
-                  ),
-                  
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset('assets/facebook.jpeg',height: 22,width: 22,),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 17),
-                        child: Text('Continue with Facebook'),
-                      ),
-                    ],
-                  )),
-                ),
-              
-                
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              SizedBox(
+                // height: 10,
+                width: 350,
+                child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/facebook.jpeg',
+                          height: 22,
+                          width: 22,
+                        ),
+                        const SizedBox(
+                          width: 6,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 17),
+                          child: Text('Continue with Facebook'),
+                        ),
+                      ],
+                    )),
+              ),
             ],
-            ),
+          ),
         ),
-      ),      
+      ),
     );
   }
 }
